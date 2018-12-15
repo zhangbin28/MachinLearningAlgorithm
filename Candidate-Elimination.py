@@ -1,8 +1,9 @@
 # Candidate-Elimination algorithm
-# book:Machine learning, Tom-Mitchell, P33
+# book:Machine learning, Tom-Mitchell, chapter 2, P33
 # zhang bin, 2018/11/02
 # 
-# 2018/12/13:   Package: class CandidateElimination
+
+import dataset as ds
 
 def getTrainData():
     return [{'Sky':'Sunny', 'AirTemp':'Warm', 'Humidity':'Normal', 'Wind':'Strong', 'Water':'Warm', 'Forecast':'Same','EnjoySport':'Yes'}, \
@@ -188,13 +189,8 @@ class CandidateElimination(object):
         print(self.version_sapce)
 
 
-f = CandidateElimination(getTrainData(), values, 'EnjoySport')
+f = CandidateElimination(ds.getTrainData(), ds.values, 'EnjoySport')
 
 f.train()
 
-#f.PrintTrainResult()
-
 print(f.test({'Sky':'Sunny', 'AirTemp':'Warm', 'Humidity':'Normal', 'Wind':'Strong', 'Water':'Cool', 'Forecast':'Change'}))
-print(f.test({'Sky':'Rain', 'AirTemp':'Cold', 'Humidity':'Normal', 'Wind':'Light', 'Water':'Warm', 'Forecast':'Same'}))
-print(f.test({'Sky':'Sunny', 'AirTemp':'Warm', 'Humidity':'Normal', 'Wind':'Light', 'Water':'Warm', 'Forecast':'Same'}))
-print(f.test({'Sky':'Sunny', 'AirTemp':'Cold', 'Humidity':'Normal', 'Wind':'Strong', 'Water':'Warm', 'Forecast':'Same'}))

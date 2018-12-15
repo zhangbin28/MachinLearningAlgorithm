@@ -1,3 +1,9 @@
+# Candidate-Elimination algorithm
+# book:Machine learning, Tom-Mitchell, chapter 8, P232
+# zhang bin, 2018/12/13
+# 
+
+import dataset as ds
 
 class KNN(object):
     def __init__(self, train_set, values, dest_key, k):
@@ -48,7 +54,7 @@ values = {'Sky':['Sunny','Rainy','Cloudy'], \
         'Water':['Warm','Cold'], \
         'Forecast':['Same','Change']}
 
-f = KNN(getTrainData(), values, 'EnjoySport',3)
+f = KNN(ds.getTrainData(), ds.values, 'EnjoySport',3)
 
 f.train()
 
